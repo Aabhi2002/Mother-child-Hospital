@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Medical Blue Theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+
+    /* Medical Blue Primary */
+    --primary: 209 66% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Light Sky Blue */
+    --secondary: 209 100% 95%;
+    --secondary-foreground: 209 66% 50%;
+    
+    /* Soft Teal */
+    --accent: 177 60% 38%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Warm Coral for CTAs */
+    --coral: 6 100% 69%;
+    --coral-foreground: 0 0% 100%;
+    
+    /* Success Green */
+    --success: 145 63% 49%;
+    --success-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 43%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 209 66% 50%;
+
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(209, 66%, 50%), hsl(177, 60%, 38%));
+    --gradient-light: linear-gradient(180deg, hsl(209, 100%, 98%), hsl(0, 0%, 100%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 16px rgba(45, 125, 210, 0.08);
+    --shadow-medium: 0 8px 24px rgba(45, 125, 210, 0.12);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 209 20% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 209 20% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 209 20% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 209 66% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 209 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 209 20% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 177 60% 42%;
+    --accent-foreground: 0 0% 100%;
+    
+    --coral: 6 100% 69%;
+    --coral-foreground: 0 0% 100%;
+    
+    --success: 145 63% 49%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 209 20% 25%;
+    --input: 209 20% 25%;
+    --ring: 209 66% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .section-gradient {
+    background: var(--gradient-light);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
+
+/* Hero Fade-In Animation */
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-fade-in {
+  opacity: 0;
+  animation: heroFadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
