@@ -76,13 +76,13 @@ const Hero = () => {
               A Legacy of Care for Mothers.
             </h1>
             
-            {/* Heading 2 - Blue color */}
+            {/* Heading 2 - Cherry Blossom Pink color */}
             <h2 
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading mb-8 animate-hero-fade-in"
               style={{ 
-                color: '#3A6FA8',
+                color: '#FFB7C5',
                 animationDelay: '0.25s',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(58, 111, 168, 0.4)',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 183, 197, 0.4)',
                 letterSpacing: '-0.02em',
                 lineHeight: '1.2'
               }}
