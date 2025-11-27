@@ -48,7 +48,7 @@ const Hero = () => {
         <div 
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(rgba(0, 75, 170, 0.5), rgba(0, 125, 210, 0.35))'
+            background: 'linear-gradient(rgba(58, 111, 168, 0.5), rgba(58, 111, 168, 0.35))'
           }}
         />
 
@@ -80,9 +80,9 @@ const Hero = () => {
             <h2 
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-heading mb-8 animate-hero-fade-in"
               style={{ 
-                color: '#3B82F6',
+                color: '#3A6FA8',
                 animationDelay: '0.25s',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.4)',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(58, 111, 168, 0.4)',
                 letterSpacing: '-0.02em',
                 lineHeight: '1.2'
               }}

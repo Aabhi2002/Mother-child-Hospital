@@ -5,8 +5,14 @@ import doctorImage from "@/assets/doctor-spotlight.jpg";
 
 const DoctorSpotlight = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-blue-light relative overflow-hidden">
+      {/* Decorative Blue Circles */}
+      <div className="absolute top-10 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 right-20 w-64 h-64 bg-primary/15 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-1/3 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
           <div className="relative">

@@ -8,55 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Medical Blue Theme */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 17%;
+    /* New Brand Theme - Blue & Red */
+    --background: 0 0% 100%; /* White #FFFFFF */
+    --foreground: 0 0% 20%; /* Dark Gray #333 */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 17%;
+    --card-foreground: 0 0% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 17%;
+    --popover-foreground: 0 0% 20%;
 
-    /* Medical Blue Primary */
-    --primary: 209 66% 50%;
+    /* Primary Blue #3A6FA8 */
+    --primary: 208 48% 45%;
     --primary-foreground: 0 0% 100%;
     
-    /* Light Sky Blue */
-    --secondary: 209 100% 95%;
-    --secondary-foreground: 209 66% 50%;
+    /* Light Gray Background #F4F4F4 */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
     
-    /* Soft Teal */
-    --accent: 177 60% 38%;
+    /* Accent Blue (slightly lighter) */
+    --accent: 208 48% 55%;
     --accent-foreground: 0 0% 100%;
     
-    /* Warm Coral for CTAs */
-    --coral: 6 100% 69%;
+    /* CTA Red #D24B4B */
+    --coral: 0 59% 56%;
     --coral-foreground: 0 0% 100%;
     
     /* Success Green */
     --success: 145 63% 49%;
     --success-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
+    --muted: 0 0% 96%; /* Light Gray #F4F4F4 */
     --muted-foreground: 0 0% 43%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 59% 56%; /* Red #D24B4B */
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 91%;
     --input: 0 0% 91%;
-    --ring: 209 66% 50%;
+    --ring: 208 48% 45%; /* Primary Blue */
 
     --radius: 0.75rem;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(209, 66%, 50%), hsl(177, 60%, 38%));
-    --gradient-light: linear-gradient(180deg, hsl(209, 100%, 98%), hsl(0, 0%, 100%));
+    --gradient-hero: linear-gradient(135deg, hsl(208, 48%, 45%), hsl(208, 48%, 55%));
+    --gradient-light: linear-gradient(180deg, hsl(0, 0%, 96%), hsl(0, 0%, 100%));
     
     /* Shadows */
-    --shadow-soft: 0 4px 16px rgba(45, 125, 210, 0.08);
-    --shadow-medium: 0 8px 24px rgba(45, 125, 210, 0.12);
+    --shadow-soft: 0 4px 16px rgba(58, 111, 168, 0.08);
+    --shadow-medium: 0 8px 24px rgba(58, 111, 168, 0.12);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,39 +79,39 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 209 20% 12%;
+    --background: 208 20% 12%;
     --foreground: 0 0% 98%;
 
-    --card: 209 20% 15%;
+    --card: 208 20% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 209 20% 15%;
+    --popover: 208 20% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 209 66% 55%;
+    --primary: 208 48% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 209 20% 20%;
+    --secondary: 208 20% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 209 20% 20%;
+    --muted: 208 20% 20%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 177 60% 42%;
+    --accent: 208 48% 60%;
     --accent-foreground: 0 0% 100%;
     
-    --coral: 6 100% 69%;
+    --coral: 0 59% 56%;
     --coral-foreground: 0 0% 100%;
     
     --success: 145 63% 49%;
     --success-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 40%;
+    --destructive: 0 59% 56%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 209 20% 25%;
-    --input: 209 20% 25%;
-    --ring: 209 66% 55%;
+    --border: 208 20% 25%;
+    --input: 208 20% 25%;
+    --ring: 208 48% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -146,6 +146,15 @@ All colors MUST be HSL.
     background: var(--gradient-light);
   }
   
+  .bg-blue-accent {
+    background-color: #EBF3FA;
+    position: relative;
+  }
+  
+  .bg-blue-light {
+    background-color: #F0F6FC;
+  }
+  
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
@@ -156,6 +165,14 @@ All colors MUST be HSL.
   
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  /* Decorative Circle Elements */
+  .circle-decoration {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(58, 111, 168, 0.15) 0%, rgba(58, 111, 168, 0.05) 70%, transparent 100%);
+    pointer-events: none;
   }
 }
 

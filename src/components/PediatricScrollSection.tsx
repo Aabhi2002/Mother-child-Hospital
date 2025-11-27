@@ -205,7 +205,7 @@ const PediatricScrollSection = () => {
         
         .service-badge {
           display: inline-block;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(135deg, #3A6FA8 0%, #5A8FC8 100%);
           color: white;
           font-size: 0.75rem;
           font-weight: 700;
@@ -234,7 +234,7 @@ const PediatricScrollSection = () => {
         .tabs_line {
           width: 80px;
           height: 4px;
-          background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+          background: linear-gradient(90deg, #3A6FA8 0%, #5A8FC8 100%);
           border-radius: 2px;
           margin-bottom: 1.5rem;
         }
