@@ -52,7 +52,7 @@ const Services = () => {
                 Comprehensive Care for Mothers & Children
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                From planning a pregnancy to your child's teenage years, we provide complete 
+                From planning a pregnancy to your child's teenage years, we provide complete
                 healthcare services under one trusted roof.
               </p>
             </div>
@@ -65,7 +65,7 @@ const Services = () => {
           <div className="absolute top-20 right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-10 w-56 h-56 bg-primary/15 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
@@ -81,8 +81,8 @@ const Services = () => {
                 {maternityServices.map((service, index) => {
                   const Icon = service.icon;
                   return (
-                    <Card 
-                      key={index} 
+                    <Card
+                      key={index}
                       className="group hover:shadow-medium transition-smooth border-2 hover:border-primary/20"
                     >
                       <CardHeader>
@@ -125,7 +125,7 @@ const Services = () => {
                   Book Appointment
                 </a>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919500135343"
                   className="inline-flex items-center justify-center rounded-xl text-base font-semibold h-14 px-8 bg-primary-foreground text-primary hover:bg-primary-foreground/90 transition-smooth"
                 >
                   Call Now

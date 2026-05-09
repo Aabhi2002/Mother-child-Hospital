@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
 // Import images
-import pediatricConsultationsImg from '@/assets/Pediatric & Child Services/Pediatric Consultations.jpg';
-import vaccinationsImg from '@/assets/Pediatric & Child Services/Vaccinations & Immunization.jpg';
-import neonatalCareImg from '@/assets/Pediatric & Child Services/Neonatal Care.jpg';
-import developmentalMonitoringImg from '@/assets/Pediatric & Child Services/Developmental Monitoring.jpg';
-import nutritionCounsellingImg from '@/assets/Pediatric & Child Services/Nutrition Counselling.jpg';
-import adolescentHealthImg from '@/assets/Pediatric & Child Services/Adolescent Health.jpg';
+import pediatricConsultationsImg from '@/assets/Pediatric & Child Services/PediatricConsultations.jpg';
+import vaccinationsImg from '@/assets/Pediatric & Child Services/Vaccination.jpg';
+import neonatalCareImg from '@/assets/Pediatric & Child Services/Neonatal Intensive Care .jpeg';
+import developmentalMonitoringImg from '@/assets/Pediatric & Child Services/Developmental Monitoring.jpeg';
+import nutritionCounsellingImg from '@/assets/Pediatric & Child Services/Nutrition.jpeg';
+import adolescentHealthImg from '@/assets/Pediatric & Child Services/Adolescent Health.png';
 
 const PediatricScrollSection = () => {
   const pediatricServices = [
@@ -50,14 +50,14 @@ const PediatricScrollSection = () => {
       const sectionTop = sectionElement.getBoundingClientRect().top;
       const sectionHeight = sectionElement.clientHeight;
       const windowHeight = window.innerHeight;
-      
+
       // Calculate scroll progress within the section
       const scrollProgress = Math.max(0, -sectionTop / (sectionHeight - windowHeight));
-      
+
       const sections = document.querySelectorAll('.tabs_let-content');
       const images = document.querySelectorAll('.tabs_image');
       const totalSections = sections.length;
-      
+
       // Determine which section should be active based on scroll progress
       // Ensure activeIndex is always between 0 and totalSections - 1
       const activeIndex = Math.max(0, Math.min(
@@ -294,8 +294,8 @@ const PediatricScrollSection = () => {
                   <div className="tabs_left">
                     <div className="tabs_left-top">
                       {pediatricServices.map((service, index) => (
-                        <div 
-                          key={index} 
+                        <div
+                          key={index}
                           className={`tabs_let-content ${index === 0 ? 'is-1' : ''}`}
                         >
                           <div>

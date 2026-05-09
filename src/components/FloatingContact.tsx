@@ -10,22 +10,22 @@ const FloatingContact = () => {
         className="h-14 w-14 rounded-full shadow-medium hover:scale-110 transition-smooth"
         asChild
       >
-        <a href="tel:+1234567890" aria-label="Call us">
+        <a href="tel:+919500135343" aria-label="Call us - Emergency">
           <Phone className="h-6 w-6" />
         </a>
       </Button>
-      
+
       <Button
         variant="accent"
         size="icon"
         className="h-14 w-14 rounded-full shadow-medium hover:scale-110 transition-smooth"
         asChild
       >
-        <a 
-          href="https://wa.me/1234567890" 
-          target="_blank" 
+        <a
+          href="https://wa.me/919390056602"
+          target="_blank"
           rel="noopener noreferrer"
-          aria-label="WhatsApp us"
+          aria-label="WhatsApp us - Appointments"
         >
           <MessageCircle className="h-6 w-6" />
         </a>

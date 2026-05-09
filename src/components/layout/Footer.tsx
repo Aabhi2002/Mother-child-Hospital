@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import hospitalLogo from "@/assets/hospital-logo.jpg";
 
 const Footer = () => {
   const quickLinks = [
@@ -18,7 +19,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold mb-4 font-heading">Mother & Child Hospital</h3>
+            <div className="bg-white rounded-lg p-2 inline-block mb-4">
+              <img
+                src={hospitalLogo}
+                alt="Mother & Child Hospital"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
             <p className="text-sm text-primary-foreground/80 mb-4">
               Serving mothers and children with compassionate care for generations.
             </p>
@@ -47,21 +54,28 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <div>
-                  <a href="tel:+1234567890" className="text-sm hover:underline">
-                    +1 (234) 567-890
-                  </a>
+                <div className="text-sm">
+                  <p className="font-medium mb-1">Appointments:</p>
+                  <a href="tel:+917032812241" className="hover:underline block">7032812241</a>
+                  <a href="tel:+919390056602" className="hover:underline block">9390056602</a>
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <div className="text-sm">
+                  <p className="font-medium mb-1">Emergency:</p>
+                  <a href="tel:+919500135343" className="hover:underline text-coral">9500135343</a>
                 </div>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@motherchildhospital.com" className="text-sm hover:underline">
-                  info@motherchildhospital.com
+                <a href="mailto:curewellhospitalwgl@gmail.com" className="text-sm hover:underline">
+                  curewellhospitalwgl@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span className="text-sm">123 Healthcare Avenue, Medical District</span>
+                <span className="text-sm">MGM Rd, Kothawada, Warangal</span>
               </li>
             </ul>
           </div>

@@ -18,7 +18,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.mobile) {
       toast.error("Please fill in all required fields");
@@ -27,9 +27,9 @@ const ContactSection = () => {
 
     // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
-    
+
     toast.success("Thank you! We'll contact you soon.");
-    
+
     // Reset form
     setFormData({
       name: "",
@@ -56,13 +56,17 @@ const ContactSection = () => {
           {/* Map & Contact Info */}
           <div className="space-y-6">
             {/* Map Placeholder */}
-            <div className="aspect-video rounded-xl overflow-hidden shadow-medium bg-gradient-to-br from-primary/10 to-accent/10">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 mx-auto mb-2 text-primary" />
-                  <p className="text-muted-foreground">Interactive Map</p>
-                </div>
-              </div>
+            <div className="aspect-video rounded-xl overflow-hidden shadow-medium">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.8!2d79.59!3d17.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a334f1c0000001f%3A0x0!2sMGM%20Hospital%20Warangal!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Hospital Location - Contact"
+              ></iframe>
             </div>
 
             {/* Contact Details */}
@@ -71,17 +75,34 @@ const ContactSection = () => {
                 <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Address</h4>
-                  <p className="text-muted-foreground">123 Healthcare Avenue, Medical District, City - 400001</p>
+                  <p className="text-muted-foreground text-sm">15-1-48, MGM Rd, near M.G.M hospital, Auto Nagar, Kothawada, Warangal, Telangana 506006</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4 p-4 rounded-lg bg-card shadow-soft">
                 <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                  <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary">
-                    +1 (234) 567-890
-                  </a>
+                <div className="w-full">
+                  <h4 className="font-semibold text-foreground mb-2">Contact Numbers</h4>
+                  <div className="space-y-2 text-sm">
+                    <div>
+                      <p className="text-muted-foreground font-medium">Appointments:</p>
+                      <a href="tel:+917032812241" className="text-primary hover:underline">7032812241</a>
+                      <span className="text-muted-foreground"> / </span>
+                      <a href="tel:+919390056602" className="text-primary hover:underline">9390056602</a>
+                    </div>
+                    <div>
+                      <p className="text-muted-foreground font-medium">Emergency:</p>
+                      <a href="tel:+919500135343" className="text-coral hover:underline font-semibold">9500135343</a>
+                    </div>
+                    <div>
+                      <p className="text-muted-foreground font-medium">IP / Insurance / Billing:</p>
+                      <a href="tel:+918712355035" className="text-primary hover:underline">8712355035</a>
+                    </div>
+                    <div>
+                      <p className="text-muted-foreground font-medium">Laboratory:</p>
+                      <a href="tel:+917680839480" className="text-primary hover:underline">7680839480</a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -89,16 +110,16 @@ const ContactSection = () => {
                 <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <a href="mailto:info@motherchildhospital.com" className="text-muted-foreground hover:text-primary">
-                    info@motherchildhospital.com
+                  <a href="mailto:curewellhospitalwgl@gmail.com" className="text-muted-foreground hover:text-primary text-sm">
+                    curewellhospitalwgl@gmail.com
                   </a>
                 </div>
               </div>
 
               <Button variant="outline" size="lg" className="w-full" asChild>
-                <a 
-                  href="https://maps.google.com" 
-                  target="_blank" 
+                <a
+                  href="https://maps.google.com/?q=15-1-48,+MGM+Rd,+near+M.G.M+hospital,+Auto+Nagar,+Kothawada,+Warangal,+Telangana+506006"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   Open in Google Maps
@@ -112,7 +133,7 @@ const ContactSection = () => {
             <h3 className="text-2xl font-bold text-foreground mb-6 font-heading">
               Book an Appointment
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name">Full Name *</Label>

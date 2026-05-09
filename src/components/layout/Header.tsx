@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import hospitalLogo from "@/assets/hospital-logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  
+
   // Check if we're on the home page
   const isHomePage = location.pathname === '/';
 
@@ -36,25 +37,30 @@ const Header = () => {
   const isSolid = !isHomePage || isScrolled;
 
   return (
-    <header 
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isSolid 
-          ? 'bg-white shadow-md border-b' 
-          : 'bg-transparent border-b border-transparent'
-      }`}
+    <header
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${isSolid
+        ? 'bg-white shadow-md border-b'
+        : 'bg-transparent border-b border-transparent'
+        }`}
       style={{
         boxShadow: isSolid ? '0 2px 10px rgba(0,0,0,0.08)' : 'none'
       }}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="flex flex-col">
-            <span className={`text-2xl font-bold font-heading transition-colors duration-300 ${
-              isSolid ? 'text-primary' : 'text-white'
-            }`}>Mother & Child</span>
-            <span className={`text-sm transition-colors duration-300 ${
-              isSolid ? 'text-muted-foreground' : 'text-white/80'
-            }`}>Hospital</span>
+        <Link to="/" className="flex items-center">
+          <div className={`flex items-center justify-center transition-all duration-300 ${!isSolid
+            ? 'bg-white/98 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-md'
+            : 'bg-white rounded-md px-2.5 py-1 shadow-sm'
+            }`}>
+            <img
+              src={hospitalLogo}
+              alt="Mother & Child Hospital"
+              className="h-[58px] w-auto object-contain"
+              style={{
+                maxWidth: '200px',
+                imageRendering: '-webkit-optimize-contrast'
+              }}
+            />
           </div>
         </Link>
 
@@ -64,11 +70,10 @@ const Header = () => {
             <Link
               key={link.path}
               to={link.path}
-              className={`text-sm font-medium transition-all duration-300 ${
-                isSolid 
-                  ? 'text-foreground/80 hover:text-primary' 
-                  : 'text-white/90 hover:text-white'
-              }`}
+              className={`text-sm font-medium transition-all duration-300 ${isSolid
+                ? 'text-foreground/80 hover:text-primary'
+                : 'text-white/90 hover:text-white'
+                }`}
             >
               {link.name}
             </Link>
@@ -81,15 +86,14 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-2 lg:hidden">
           <Button variant="coral" size="sm" asChild>
-            <a href="tel:+1234567890">
+            <a href="tel:+919500135343">
               <Phone className="h-4 w-4" />
             </a>
           </Button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`transition-colors duration-300 ${
-              isSolid ? 'text-foreground' : 'text-white'
-            }`}
+            className={`transition-colors duration-300 ${isSolid ? 'text-foreground' : 'text-white'
+              }`}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

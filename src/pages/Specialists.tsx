@@ -4,32 +4,17 @@ import FloatingContact from "@/components/FloatingContact";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Award, Clock, Calendar } from "lucide-react";
+import drHemaImage from "@/assets/Dr. V Hema.jpg";
 
 const Specialists = () => {
   const doctors = [
     {
-      name: "Dr. [Full Name]",
+      name: "Dr. V Hema",
       designation: "Senior Consultant - Obstetrics & Gynecology",
-      qualifications: "MBBS, MD (OB/GYN), Fellowship in Maternal Fetal Medicine",
-      experience: "30+ years",
-      specializations: ["High-Risk Pregnancy", "Maternal Fetal Medicine", "Lactation Support"],
-      opd: "Mon-Sat: 10:00 AM - 2:00 PM, 5:00 PM - 8:00 PM",
-    },
-    {
-      name: "Dr. [Name]",
-      designation: "Consultant Pediatrician",
-      qualifications: "MBBS, MD (Pediatrics), IAP Fellowship",
-      experience: "15+ years",
-      specializations: ["General Pediatrics", "Neonatology", "Developmental Assessment"],
-      opd: "Mon-Sat: 9:00 AM - 1:00 PM, 4:00 PM - 7:00 PM",
-    },
-    {
-      name: "Dr. [Name]",
-      designation: "Consultant Gynecologist",
-      qualifications: "MBBS, MS (OB/GYN)",
-      experience: "12+ years",
-      specializations: ["Women's Health", "Fertility Counselling", "Gynecological Surgery"],
-      opd: "Tue, Thu, Sat: 10:00 AM - 1:00 PM",
+      qualifications: "MBBS, MD (OBG)",
+      specializations: ["Obstetrics", "Gynaecology", "Laparoscopic Surgery"],
+      opd: "Mon-Sun: 8 AM to 8 PM",
+      image: drHemaImage,
     },
   ];
 
@@ -42,7 +27,7 @@ const Specialists = () => {
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center animate-fade-in">
               <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-6">
@@ -52,7 +37,7 @@ const Specialists = () => {
                 Meet Our Specialists
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Our team of experienced doctors is dedicated to providing compassionate, 
+                Our team of experienced doctors is dedicated to providing compassionate,
                 personalized care for mothers and children.
               </p>
             </div>
@@ -65,23 +50,34 @@ const Specialists = () => {
           <div className="absolute top-20 right-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-7xl mx-auto space-y-10">
               {doctors.map((doctor, index) => (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="overflow-hidden shadow-xl border-0 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white"
                 >
                   <div className="grid md:grid-cols-[320px,1fr] gap-0">
                     {/* Doctor Image */}
                     <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-white flex items-center justify-center p-10 relative">
                       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-primary/60"></div>
-                      <div className="w-52 h-52 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shadow-lg border-4 border-white">
-                        <span className="text-5xl font-bold text-primary font-heading">
-                          {doctor.name.split(' ')[1]?.[0] || 'D'}
-                        </span>
-                      </div>
+                      {doctor.image ? (
+                        <div className="w-52 h-52 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                          <img
+                            src={doctor.image}
+                            alt={doctor.name}
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: 'center 0%' }}
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-52 h-52 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center shadow-lg border-4 border-white">
+                          <span className="text-5xl font-bold text-primary font-heading">
+                            {doctor.name.split(' ')[1]?.[0] || 'D'}
+                          </span>
+                        </div>
+                      )}
                     </div>
 
                     {/* Doctor Info */}
@@ -109,20 +105,10 @@ const Specialists = () => {
                             <Award className="h-5 w-5 text-primary" />
                           </div>
                           <div className="flex-1">
-                            <p className="font-semibold text-sm text-gray-500 mb-2">Experience</p>
-                            <p className="text-gray-800 font-medium">{doctor.experience}</p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                            <Award className="h-5 w-5 text-primary" />
-                          </div>
-                          <div className="flex-1">
                             <p className="font-semibold text-sm text-gray-500 mb-3">Specializations</p>
                             <div className="flex flex-wrap gap-2">
                               {doctor.specializations.map((spec, i) => (
-                                <span 
+                                <span
                                   key={i}
                                   className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors"
                                 >
