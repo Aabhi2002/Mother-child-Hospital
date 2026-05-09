@@ -101,7 +101,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-sm text-primary-foreground/70">
-            © {new Date().getFullYear()} Mother & Child Hospital. All rights reserved.
+            © {new Date().getFullYear()} Cure Well Hospital. All rights reserved.
           </p>
         </div>
       </div>
