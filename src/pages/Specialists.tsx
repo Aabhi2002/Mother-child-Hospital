@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Award, Clock, Calendar } from "lucide-react";
 import drHemaImage from "@/assets/Dr. V Hema.jpg";
+import drRahulImage from "@/assets/Dr Rahul MBBS.jpg";
+import drSureshImage from "@/assets/DR K SURESH .jpg";
 
 const Specialists = () => {
   const doctors = [
@@ -15,6 +17,25 @@ const Specialists = () => {
       specializations: ["Obstetrics", "Gynaecology", "Laparoscopic Surgery"],
       opd: "Mon-Sun: 8 AM to 8 PM",
       image: drHemaImage,
+      imagePosition: "center 0%",
+    },
+    {
+      name: "Dr. Rahul",
+      designation: "Consultant Pediatrician",
+      qualifications: "MBBS, MD Pediatrics",
+      specializations: ["Pediatrics", "Neonatal Care", "Child Health"],
+      opd: "Mon-Sun: 10 AM to 7 PM",
+      image: drRahulImage,
+      imagePosition: "center 10%",
+    },
+    {
+      name: "Dr. K Suresh",
+      designation: "Consultant Pediatrician",
+      qualifications: "MBBS, MD Pediatrics",
+      specializations: ["Pediatrics", "Neonatal Care", "Child Health"],
+      opd: null,
+      image: drSureshImage,
+      imagePosition: "center 10%",
     },
   ];
 
@@ -68,7 +89,7 @@ const Specialists = () => {
                             src={doctor.image}
                             alt={doctor.name}
                             className="w-full h-full object-cover"
-                            style={{ objectPosition: 'center 0%' }}
+                            style={{ objectPosition: doctor.imagePosition || 'center 0%' }}
                           />
                         </div>
                       ) : (
@@ -119,15 +140,17 @@ const Specialists = () => {
                           </div>
                         </div>
 
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-coral/10 flex items-center justify-center flex-shrink-0">
-                            <Clock className="h-5 w-5 text-coral" />
+                        {doctor.opd && (
+                          <div className="flex items-start gap-4">
+                            <div className="w-10 h-10 rounded-lg bg-coral/10 flex items-center justify-center flex-shrink-0">
+                              <Clock className="h-5 w-5 text-coral" />
+                            </div>
+                            <div className="flex-1">
+                              <p className="font-semibold text-sm text-gray-500 mb-2">OPD Timings</p>
+                              <p className="text-gray-800">{doctor.opd}</p>
+                            </div>
                           </div>
-                          <div className="flex-1">
-                            <p className="font-semibold text-sm text-gray-500 mb-2">OPD Timings</p>
-                            <p className="text-gray-800">{doctor.opd}</p>
-                          </div>
-                        </div>
+                        )}
 
                         <div className="pt-6 flex gap-3">
                           <Button variant="coral" size="lg" asChild className="flex-1 md:flex-none">
