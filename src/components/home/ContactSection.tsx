@@ -58,7 +58,7 @@ const ContactSection = () => {
             {/* Map Placeholder */}
             <div className="aspect-video rounded-xl overflow-hidden shadow-medium">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.8!2d79.59!3d17.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a334f1c0000001f%3A0x0!2sMGM%20Hospital%20Warangal!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.8!2d79.5911005!3d17.9927959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a33450fdfe6c961%3A0xc89af3c13f8d8be5!2sCurewell+Hospital!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -118,7 +118,7 @@ const ContactSection = () => {
 
               <Button variant="outline" size="lg" className="w-full" asChild>
                 <a
-                  href="https://maps.google.com/?q=15-1-48,+MGM+Rd,+near+M.G.M+hospital,+Auto+Nagar,+Kothawada,+Warangal,+Telangana+506006"
+                  href="https://www.google.com/maps/place/Curewell+Hospital/@17.9927908,79.5936754,17z/data=!4m6!3m5!1s0x3a33450fdfe6c961:0xc89af3c13f8d8be5!8m2!3d17.9927908!4d79.5936754!16s%2Fg%2F1pp2xb68s"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
